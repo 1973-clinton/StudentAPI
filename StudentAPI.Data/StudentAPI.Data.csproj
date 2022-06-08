@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentAPI.Logic\StudentAPI.Logic.csproj" />
+    <ProjectReference Include="..\StudentAPI.Models\StudentAPI.Models.csproj" />
   </ItemGroup>
 
 </Project>

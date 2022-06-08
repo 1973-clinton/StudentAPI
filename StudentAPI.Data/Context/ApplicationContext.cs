@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StudentAPI.Logic.Models;
+using StudentAPI.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

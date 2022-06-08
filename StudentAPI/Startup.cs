@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using StudentAPI.Data.Context;
 using StudentAPI.Logic.IRepository;
+using StudentAPI.Logic.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace StudentAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StudentAPI", Version = "v1" });
             });
             services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IStudentRepository, StudentRepository>
+            services.AddScoped<IStudentRepository, StudentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
