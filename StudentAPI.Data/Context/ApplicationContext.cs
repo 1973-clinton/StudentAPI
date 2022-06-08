@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentAPI.Models.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudentAPI.Data.Context
 {
@@ -31,5 +27,8 @@ namespace StudentAPI.Data.Context
         }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<Employees> Employees { get; set; }
+        public DbSet<Parent> Parents { get; set; }
+
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using StudentAPI.Data.Context;
@@ -9,9 +10,10 @@ using StudentAPI.Data.Context;
 namespace StudentAPI.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220608115207_AddEmployee")]
+    partial class AddEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace StudentAPI.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Class")
-                        .HasColumnType("text");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
@@ -81,8 +80,8 @@ namespace StudentAPI.Data.Migrations
                         {
                             Id = 1,
                             Age = 30,
-                            DateJoined = new DateTime(2022, 6, 8, 11, 54, 34, 525, DateTimeKind.Local).AddTicks(252),
-                            DateOfBirth = new DateTime(2022, 6, 8, 11, 54, 34, 525, DateTimeKind.Local).AddTicks(768),
+                            DateJoined = new DateTime(2022, 6, 8, 11, 52, 6, 380, DateTimeKind.Local).AddTicks(1588),
+                            DateOfBirth = new DateTime(2022, 6, 8, 11, 52, 6, 380, DateTimeKind.Local).AddTicks(2125),
                             Email = "clinton.boamah@outlook.com",
                             FirstName = "Clinton",
                             Gender = 0,

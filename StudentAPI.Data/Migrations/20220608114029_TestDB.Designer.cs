@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using StudentAPI.Data.Context;
@@ -9,36 +10,16 @@ using StudentAPI.Data.Context;
 namespace StudentAPI.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220608114029_TestDB")]
+    partial class TestDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-            modelBuilder.Entity("StudentAPI.Models.Models.Employees", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Class")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Employees");
-                });
 
             modelBuilder.Entity("StudentAPI.Models.Models.Student", b =>
                 {
@@ -81,8 +62,8 @@ namespace StudentAPI.Data.Migrations
                         {
                             Id = 1,
                             Age = 30,
-                            DateJoined = new DateTime(2022, 6, 8, 11, 54, 34, 525, DateTimeKind.Local).AddTicks(252),
-                            DateOfBirth = new DateTime(2022, 6, 8, 11, 54, 34, 525, DateTimeKind.Local).AddTicks(768),
+                            DateJoined = new DateTime(2022, 6, 8, 11, 40, 28, 59, DateTimeKind.Local).AddTicks(4227),
+                            DateOfBirth = new DateTime(2022, 6, 8, 11, 40, 28, 59, DateTimeKind.Local).AddTicks(4982),
                             Email = "clinton.boamah@outlook.com",
                             FirstName = "Clinton",
                             Gender = 0,
