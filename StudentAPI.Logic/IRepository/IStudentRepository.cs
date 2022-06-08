@@ -19,8 +19,8 @@ namespace StudentAPI.Logic.IRepository
         //create student
         Task<Student> AddStudent(Student student);
 
-        Task DeleteStudent(Student student);
+        Task<int> DeleteStudent(int id);
 
-        Task UpdateStudent(Student student);
+        Task<int> UpdateStudent(Student student);
     }
 }

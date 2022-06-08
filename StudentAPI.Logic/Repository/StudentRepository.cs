@@ -26,10 +26,15 @@ namespace StudentAPI.Logic.Repository
             return student;
         }
 
-        public async Task DeleteStudent(Student student)
+        public async Task<int> DeleteStudent(int id)
         {
-            _context.Students.Remove(student);
-            await _context.SaveChangesAsync();
+            var student = await _context.Students.FirstOrDefaultAsync(u => u.Id == id);
+            if (student != null)
+            {
+                _context.Students.Remove(student);
+            }
+            return await _context.SaveChangesAsync();
+
         }
 
         public async Task<IEnumerable<Student>> GetAllStudents()
@@ -45,7 +50,7 @@ namespace StudentAPI.Logic.Repository
             return student;
         }
 
-        public async Task UpdateStudent(Student student)
+        public async Task<int> UpdateStudent(Student student)
         {
             var stu = await _context.Students.FirstOrDefaultAsync(u => u.Id == student.Id);
             if (stu != null)
@@ -61,7 +66,10 @@ namespace StudentAPI.Logic.Repository
             }
 
             _context.Students.Update(student);
-            await _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync();
+
+            return result;
+
         }
 
        
